@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .follower{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: #97df7a;
+            box-shadow: 5px 5px 20px rgb(73, 73, 73);
+            transition: transform .2s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="follower" id="follower"> </div>
+    </div>
+    
+    <script>
+        const follower = document.getElementById("follower");
+        
+        document.addEventListener("mousemove",(event) => {
+    
+            let {clientX, clientY} = event;
+            follower.style.transform = `translate(${clientX}px,${clientY}px)`;
+        });
+        
+    </script>
+</body>
+
+</html>
